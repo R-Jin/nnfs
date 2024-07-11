@@ -35,4 +35,6 @@ $$
 y = \frac{1}{1+e^{-x}}
 $$
 
+## ReLu Activation Function
+
 ## Softmax Activation Function

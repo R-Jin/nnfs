@@ -3,6 +3,7 @@ import nnfs
 from nnfs.datasets import spiral_data
 from Layer_Dense import Layer_Dense
 from Activation_ReLU import Activation_ReLU
+from softmax import Activation_Softmax
 
 nnfs.init()
 
@@ -22,5 +23,11 @@ dense1.forward(X)
 activation1 = Activation_ReLU()
 activation1.forward(dense1.output)
 
-# Show outputs of the first 5 samples
-print(activation1.output[:5])
+dense2 = Layer_Dense(3, 3)
+dense2.forward(activation1.output)
+
+# Softmax activation function as last layer
+activation2 = Activation_Softmax()
+activation2.forward(dense2.output)
+
+print(activation2.output[:5])
